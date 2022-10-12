@@ -104,6 +104,7 @@ class ClassAssignment(models.Model):
     teacher = models.ForeignKey(Teacher,related_name='teacher_assignment',on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now=True)
     assignment_name = models.CharField(max_length=250)
+    assignment = models.FileField(upload_to='assignments')
 
     def __str__(self):
         return self.assignment_name

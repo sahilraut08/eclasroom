@@ -16,7 +16,7 @@ class Student(models.Model):
     roll_no = models.CharField(max_length=50)
     email = models.EmailField(max_length=254)
     phone = models.IntegerField()
-    student_profile_pic = models.ImageField(upload_to="",blank=True)
+    student_profile_pic = models.ImageField(upload_to="classroom/student_profile_pic",blank=True)
 
     def get_absolute_url(self):
         return reverse('classroom:student_detail',kwargs={'pk':self.pk})
